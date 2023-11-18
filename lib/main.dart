@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:learning_app_a/kernel/widgets/navigation/menu.dart';
 import 'package:learning_app_a/kernel/widgets/splash/Splash.dart';
+import 'package:learning_app_a/modules/shop/adapters/screens/detail_shop.dart';
 import 'package:learning_app_a/modules/shop/adapters/screens/shop.dart';
+import 'package:learning_app_a/modules/shop/adapters/screens/shop_card.dart';
 
 void main() {
   runApp(const MainApp());
@@ -19,6 +21,8 @@ class MainApp extends StatelessWidget {
         '/': (context) => const Splash(title: 'Loading mamahuevo'),
         '/menu': (context) => const Menu(),
         '/shop': (context) => const Shop(),
+        '/shop/detail-shop': (context) => const DetailShop(),
+        '/shop/shop-cart': (context) => const ShopCard(),
       },
     );
   }

@@ -13,6 +13,7 @@ class DetailShop extends StatelessWidget {
     final title = arguments["text"] ?? '';
     final description = arguments["description"] ?? '';
     final initialRating = arguments["initialRating"] ?? 0.0;
+    final price = arguments["price"] ?? 0.0;
     final imageUri = arguments["imageUri"] ?? 'assets/images/logo2.jpg';
     double widthImage = MediaQuery.of(context).size.width;
     return Scaffold(
@@ -41,28 +42,38 @@ class DetailShop extends StatelessWidget {
                   child: Text(
                     title,
                     style: const TextStyle(
-                      fontSize: 14.0,
+                      fontSize: 20.0,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),
-                RatingBar.builder(
-                  initialRating: initialRating,
-                  minRating: 1,
-                  direction: Axis.horizontal,
-                  allowHalfRating: true,
-                  itemCount: 5,
-                  itemSize: 8,
-                  itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
-                  itemBuilder: (context, _) => const Icon(
-                    Icons.settings_accessibility,
-                    color: Colors.amber,
-                  ),
-                  updateOnDrag: true,
-                  onRatingUpdate: (rating) {
-                    // ignore: avoid_print
-                    print(rating);
-                  },
+                const Spacer(),
+                Column(
+                  children: [
+                    Text(
+                      '\$$price',
+                      style: const TextStyle(
+                          fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                    RatingBar.builder(
+                      initialRating: initialRating,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemSize: 15,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      updateOnDrag: false,
+                      onRatingUpdate: (rating) {
+                        // ignore: avoid_print
+                        print(rating);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -76,6 +87,19 @@ class DetailShop extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {},
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.white,
+          foregroundColor: ColorsApp.successColor,
+          side: const BorderSide(color: ColorsApp.successColor),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
+        child: const Text('Agregar al carrito'),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
