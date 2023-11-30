@@ -15,6 +15,7 @@ class DetailShop extends StatelessWidget {
     final initialRating = arguments["initialRating"] ?? 0.0;
     final price = arguments["price"] ?? 0.0;
     final imageUri = arguments["imageUri"] ?? 'assets/images/logo2.jpg';
+
     double widthImage = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(
@@ -88,7 +89,14 @@ class DetailShop extends StatelessWidget {
         ],
       ),
       floatingActionButton: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, '/shop/shop-cart', arguments: {
+            'title': title,
+            'description': description,
+            'imageUri': imageUri,
+            'price': price
+          });
+        },
         style: OutlinedButton.styleFrom(
           backgroundColor: Colors.white,
           foregroundColor: ColorsApp.successColor,

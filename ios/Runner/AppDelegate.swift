@@ -8,6 +8,7 @@ import Flutter
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
     GeneratedPluginRegistrant.register(with: self)
+    GMSService.provideAPIKey("AIzaSyAHnG_mmfMARB2hXxrhRGMKf1_s-im9opI")
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

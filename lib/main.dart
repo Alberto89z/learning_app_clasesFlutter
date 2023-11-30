@@ -20,7 +20,7 @@ class MainApp extends StatelessWidget {
       routes: {
         '/': (context) => const Splash(title: 'Loading mamahuevo'),
         '/menu': (context) => const Menu(),
-        '/shop': (context) => const Shop(),
+        '/shop': (context) => Shop(),
         '/shop/detail-shop': (context) => const DetailShop(),
         '/shop/shop-cart': (context) => const ShopCard(),
       },

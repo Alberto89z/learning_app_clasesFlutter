@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:learning_app_a/kernel/theme/colors_app.dart';
+import 'package:learning_app_a/modules/shop/adapters/screens/shop.dart';
 
 class ContainerShop extends StatelessWidget {
   final String title;
@@ -84,17 +85,7 @@ class ContainerShop extends StatelessWidget {
           ),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(
-                context,
-                '/shop/detail-shop',
-                arguments: {
-                  "text": title,
-                  "description": description,
-                  "initialRating": initialRating,
-                  "imageUri": imageUri,
-                  "price": price,
-                },
-              );
+              enviarListaAShopDetail(context);
             },
             style: OutlinedButton.styleFrom(
               backgroundColor: Colors.white,
@@ -110,4 +101,7 @@ class ContainerShop extends StatelessWidget {
       ),
     );
   }
+}
+
+void enviarListaAShopDetail(BuildContext context) {
 }

@@ -45,5 +45,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<key>NSLocationWhenInUsedUsageDescription</key>
+	<string>I need to obtain access to location so my user can have acces to the products availables in their feed</string>
 </dict>
 </plist>
